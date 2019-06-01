@@ -42,7 +42,11 @@ class Scraper
   end #end method 
 
   def self.scrape_profile_page(profile_url)
+    profile_page = open(profile_url).read
+    parsed_html = Nokogiri::HTML(profile_page)
     
+    some_href = parsed_html.css('div.social-icon-container a[href]')
+    binding.pry
   end
 
 end
