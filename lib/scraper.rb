@@ -34,9 +34,8 @@ class Scraper
   #now we create each hash 
   
     i = 0 
-    
-    names_array.each do |st_name|
-      all << {:name => st_name, :location => loc_array[i], :profile_url => url_array[i]}
+    while i<=names_array.length
+      all << {:name => names_array[i], :location => loc_array[i], :profile_url => url_array[i]}
       i += 1
     end
     return all
